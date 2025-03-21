@@ -1,0 +1,18 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "MartianLootbox",
+        "description": "Custom Sized Inventory RP for MartianLootbox",
+        "uuid": "781d2cc8-e385-47fc-9728-0faf05297096",
+        "version": [1, 0, 0],
+        "min_engine_version": [1, 21, 0]
+    },
+    "modules": [
+        {
+            "type": "resources",
+            "description": "Custom Sized Inventory RP for MartianLootbox",
+            "uuid": "a9a6b848-51c5-4796-b3bc-aaf32221295c",
+            "version": [1, 0, 0]
+        }
+    ]
+}

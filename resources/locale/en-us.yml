@@ -1,0 +1,11 @@
+error:
+  lootbox-not-found: "&r&4Error: &cThe lootbox '{IDENTIFIER}' was not found."
+  specify-id: "&r&4Error: &cyou must specify an identifier."
+  invalid-player: "&r&4Error: &c'{IDENTIFIER}' is not a valid player."
+  invalid-lootbox: "&r&4Error: &cInvalid lootbox ID or failed to create the lootbox item"
+  full-inventory: "&r&4Error: &cYour inventory is full."
+  no-rewards: "&r&4Error: &cThis lootbox has no rewards."
+
+commands:
+  give:
+    success: "&r&2Success: &aGave &2x&a{AMOUNT} {LOOTBOX} to {PLAYER}."

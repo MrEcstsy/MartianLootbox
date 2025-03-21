@@ -1,0 +1,54 @@
+item:
+  material: CHEST # Material of the lootbox
+  name: "&r&cExample Lootbox"
+  lore:
+    - "&r&7This is an example lootbox"
+animation:
+  type: 1 # Type of animation of the lootbox
+  settings: # Settings will vary depending on the animation type
+    title: '&r&cExample Lootbox'
+    reward-slots:
+      - 2
+      - 3
+      - 4
+    bonus-rewards-slots:
+      - 5
+      - 6
+    timer-slots:
+      - 0
+      - 8
+    time: 5
+    broadcast:
+      enable: true
+      header: '&r&e&l(!) &e{PLAYER} has just open the &c&lExample Lootbox &eand has
+        gotten'
+      message: '&r&6&l* &e&l{AMOUNT}x {ITEM}'
+    sound:
+      start: random.click
+      prize: player.levelup
+    skippable: true
+    reward-preview:
+      enable: true
+      show-percents: true
+
+# Example of how to add rewards:
+# - item: diamond
+#   amount: 1  # Specifies how many of the item to give
+# - item: diamond_sword  # The item you want to give (use the item ID)
+#   name: "&r&cDiamond Sword"  # Custom name for the item (supports color codes)
+# - item: diamond_helmet  # Another example item
+#   name: "&r&cDiamond Helmet"
+#   amount: 1  # Amount of the item
+#   enchantments:  # Enchantments to apply to the item
+#     - enchant: "protection"  # Enchantment type
+#       level: 4  # Enchantment level
+# - item: paper  # A different item (e.g., a bank note)
+#   amount: 1  # Amount of the item
+#   name: "&r&cBank Note"  # Custom name for the bank note
+#   lore:  # Lore (description) for the bank note
+#     - "&r&7Right click to claim!"
+#   nbt:  # NBT data (e.g., custom tags)
+#     tag: "banknote"  # Custom tag
+#     value: 1000  # The value associated with the banknote
+rewards: []
+bonus-rewards: []
