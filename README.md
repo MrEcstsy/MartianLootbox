@@ -8,3 +8,8 @@ TODO:
 - [ ] implement reward previews (my next update)
 - [ ] implement '0' animation (No animation, just a plain "click n claim"
 - [ ] implement a list subcommand (shows all available lootboxes)
+
+## Preview
+
+### '1' Animation (Shuffle)
+[Animation](https://imgur.com/a/dEanY47)
