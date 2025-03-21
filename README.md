@@ -12,4 +12,7 @@ TODO:
 ## Preview
 
 ### '1' Animation (Shuffle)
-[Animation](https://imgur.com/a/dEanY47)
+<video width="320" height="240" controls>
+  <source src="https://i.imgur.com/arYTSGg.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
