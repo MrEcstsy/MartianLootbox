@@ -23,7 +23,7 @@ final class ShuffleAnimation extends BaseAnimation {
         $screen->display($this->player);
 
         $task = new ShuffleAnimationTask($this->player, $screen->getInventory(), $settings, $rewards, $bonusRewards, $settings['time'] ?? 5);
-        Loader::getInstance()->getScheduler()->scheduleRepeatingTask($task, 1); // Use 1 for quicker timing
+        Loader::getInstance()->getScheduler()->scheduleRepeatingTask($task, 1); 
     }
 
     private function ensureRewardAlways(array &$config): void
