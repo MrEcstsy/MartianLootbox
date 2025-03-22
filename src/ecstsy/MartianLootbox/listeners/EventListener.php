@@ -37,7 +37,12 @@ final class EventListener implements Listener {
         if (empty($lootboxConfig['rewards']) || !is_array($lootboxConfig['rewards'])) {
             $player->sendMessage(C::colorize(Loader::getLanguageManager()->getNested('error.no-rewards')));
             return;
-        }        
+        }  
+        
+        if ($player->isSneaking()) {
+            Loader::getLootboxManager()->previewLootbox($player, $lootboxId);
+            return;
+        }
 
         Loader::getLootboxManager()->openLootbox($player, $lootboxId);   
         $item->pop();
