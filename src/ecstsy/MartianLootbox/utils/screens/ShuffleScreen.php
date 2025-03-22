@@ -6,12 +6,12 @@ namespace ecstsy\MartianLootbox\utils\screens;
 
 use ecstsy\MartianLootbox\utils\inventory\CustomSizedInvMenu;
 use ecstsy\MartianUtilities\interfaces\ScreenInterface;
+use ecstsy\MartianUtilities\utils\ItemUtils;
 use muqsit\invmenu\InvMenu;
 use muqsit\invmenu\transaction\DeterministicInvMenuTransaction;
 use pocketmine\inventory\Inventory;
 use pocketmine\item\Item;
 use pocketmine\player\Player;
-use pocketmine\scheduler\TaskHandler;
 use pocketmine\Server;
 use pocketmine\utils\TextFormat as C;
 
@@ -25,12 +25,13 @@ final class ShuffleScreen implements ScreenInterface {
     private array $rewards;
     /** @var Item[] */
     private array $bonusRewards;
-
+    private array $givenRewards = [];
+    
     public function __construct(array $settings, array $rewards, array $bonusRewards)
     {
         $this->settings = $settings;
-        $this->rewards = $rewards;
-        $this->bonusRewards = $bonusRewards;
+        $this->rewards = ItemUtils::setupItems($rewards);
+        $this->bonusRewards = ItemUtils::setupItems($bonusRewards);
 
 
         self::$menu = CustomSizedInvMenu::create(9);
@@ -43,7 +44,10 @@ final class ShuffleScreen implements ScreenInterface {
         $this->populateMenuWithRewards(self::$menu->getInventory());
 
         self::$menu->setInventoryCloseListener(function(Player $player, Inventory $inventory) {
-            $this->giveRewardsOnClose($player, $inventory);
+            if (!isset($this->givenRewards[$player->getName()])) {
+                $this->giveRewardsOnClose($player, $inventory);
+                $this->givenRewards[$player->getName()] = true; 
+            }
         });
     }
 
@@ -59,7 +63,7 @@ final class ShuffleScreen implements ScreenInterface {
 
     private function populateMenuWithRewards(Inventory $inventory): void
     {
-        $rewardSlots = $this->settings['rewards-slots'] ?? [];
+        $rewardSlots = $this->settings['reward-slots'] ?? [];
         $bonusRewardSlots = $this->settings['bonus-rewards-slots'] ?? [];
     
         foreach ($this->rewards as $index => $reward) {
@@ -123,5 +127,13 @@ final class ShuffleScreen implements ScreenInterface {
                 $player->sendMessage(C::colorize(str_replace("{PLAYER}", $player->getName(), $broadcastMessage)));
             }
         }
+    }
+
+    
+    /** TODO:
+     * Make self::display static?
+     */
+    public static function resend(Player $player): void {
+        self::$menu->send($player);
     }
 }
