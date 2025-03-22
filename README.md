@@ -1,6 +1,10 @@
 
 # MartianLootbox
 
+[![](https://poggit.pmmp.io/shield.state/MartianLootbox)](https://poggit.pmmp.io/p/MartianLootbox)
+<a href="https://poggit.pmmp.io/p/MartianLootbox"><img src="https://poggit.pmmp.io/shield.state/MartianLootbox"></a> [![](https://poggit.pmmp.io/shield.api/MartianLootbox)](https://poggit.pmmp.io/p/MartianLootbox)
+<a href="https://poggit.pmmp.io/p/MartianLootbox"><img src="https://poggit.pmmp.io/shield.api/MartianLootbox"></a>
+
 **MartianLootbox** is a powerful, customizable lootbox plugin for PocketMine, designed to offer a variety of animations, customizable rewards, and advanced features to enhance the player's experience on your server. With this plugin, players can enjoy visually stunning lootbox animations like shuffle effects or even no-animation modes for a more straightforward claim experience.
 
 ## Features
