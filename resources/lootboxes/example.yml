@@ -29,7 +29,6 @@ animation:
     skippable: true
     reward-preview:
       enable: true
-      show-percents: true
 
 # Example of how to add rewards:
 # - item: diamond
