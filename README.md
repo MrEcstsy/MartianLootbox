@@ -38,10 +38,6 @@ Displays all available lootboxes on the server.
 ### `/martianlootbox info`
 Displays plugin information.
 
-## Permissions
-
-The plugin does not have explicit permission checks for lootbox access at the moment, but you can easily implement permission-based access if needed for your server.
-
 ## Previews
 
 ### Animation Previews
