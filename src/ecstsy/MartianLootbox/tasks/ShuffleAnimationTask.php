@@ -10,12 +10,9 @@ use pocketmine\inventory\Inventory;
 use pocketmine\block\VanillaBlocks;
 use pocketmine\block\utils\DyeColor;
 use pocketmine\utils\TextFormat as C;
-use ecstsy\MartianLootbox\Loader;
 use ecstsy\MartianUtilities\utils\ItemUtils;
 use ecstsy\MartianUtilities\utils\PlayerUtils;
-use pocketmine\console\ConsoleCommandSender;
 use pocketmine\item\Item;
-use pocketmine\Server;
 
 class ShuffleAnimationTask extends Task {
 
@@ -51,6 +48,12 @@ class ShuffleAnimationTask extends Task {
 
     public function onRun(): void {
         $this->ticksElapsed++;
+
+        if (!in_array($this->player, $this->inventory->getViewers(), true)) {
+            $this->finalizeAnimation();
+            $this->getHandler()->cancel();
+            return;
+        }
 
         if ($this->ticksElapsed % 20 === 0) {
             $this->remainingTime--;
