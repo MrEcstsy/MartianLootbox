@@ -5,6 +5,7 @@ branches:
 projects:
   MartianLootbox:
     path: ""
+    icon: icon.png
     libs:
       - src: "muqsit/InvMenu/InvMenu"
         branch: pm5
