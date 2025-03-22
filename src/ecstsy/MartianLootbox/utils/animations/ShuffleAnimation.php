@@ -7,7 +7,6 @@ namespace ecstsy\MartianLootbox\utils\animations;
 use ecstsy\MartianLootbox\Loader;
 use ecstsy\MartianLootbox\tasks\ShuffleAnimationTask;
 use ecstsy\MartianLootbox\utils\screens\ShuffleScreen;
-use pocketmine\utils\TextFormat as C;
 
 final class ShuffleAnimation extends BaseAnimation {
 

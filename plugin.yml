@@ -9,3 +9,7 @@ permissions:
     default: op
   martianlootbox.command.give:
     default: op
+  martianlootbox.command.list:
+    default: op
+  martianlootbox.command.info:
+    default: true

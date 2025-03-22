@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace ecstsy\MartianLootbox\utils;
 
 use ecstsy\MartianLootbox\Loader;
-use ecstsy\MartianLootbox\tasks\ShuffleAnimationTask;
 use ecstsy\MartianLootbox\utils\animations\NoAnimation;
 use ecstsy\MartianLootbox\utils\animations\ShuffleAnimation;
-use ecstsy\MartianLootbox\utils\screens\ShuffleScreen;
+use ecstsy\MartianLootbox\utils\screens\LootboxPreviewScreen;
 use ecstsy\MartianUtilities\utils\GeneralUtils;
 use pocketmine\player\Player;
 use pocketmine\utils\SingletonTrait;
@@ -64,4 +63,16 @@ final class LootboxManager {
         $animation->execute();  
     }
     
+    public function previewLootbox(Player $player, string $id): void
+    {
+        $config = $this->getLootboxConfiguration($id);
+
+        if ($config === null) {
+            $player->sendMessage(C::colorize(str_replace("{IDENTIFIER}", $id, Loader::getLanguageManager()->getNested("error.lootbox-not-found"))));
+            return;
+        }
+        
+        $preview = new LootboxPreviewScreen($config['animation']['settings'], $config['rewards'], $config['bonus-rewards'], $config['animation']['settings']['reward-preview'] ?? null);
+        $preview->display($player);
+    }
 }

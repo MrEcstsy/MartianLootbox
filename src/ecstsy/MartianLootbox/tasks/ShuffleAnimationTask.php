@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ecstsy\MartianLootbox\tasks;
 
+use ecstsy\MartianLootbox\utils\screens\ShuffleScreen;
 use pocketmine\scheduler\Task;
 use pocketmine\player\Player;
 use pocketmine\inventory\Inventory;
@@ -50,9 +51,14 @@ class ShuffleAnimationTask extends Task {
         $this->ticksElapsed++;
 
         if (!in_array($this->player, $this->inventory->getViewers(), true)) {
-            $this->finalizeAnimation();
-            $this->getHandler()->cancel();
-            return;
+            if (($this->settings['skippable'] ?? false) === true) {
+                $this->finalizeAnimation();
+                $this->getHandler()->cancel();
+                return;
+            } else {
+                $this->player->sendMessage(C::colorize("&r&cYou cannot close this lootbox! Reopening..."));
+                ShuffleScreen::resend($this->player);
+            }
         }
 
         if ($this->ticksElapsed % 20 === 0) {
