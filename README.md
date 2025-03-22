@@ -18,8 +18,6 @@ MartianLootbox comes with two animations by default:
 ### Shuffle Animation (Animation ID: `1`)
 The shuffle animation creates an exciting experience where the lootboxes are shuffled before revealing the rewards.
 
-![Shuffle Animation Preview](https://github.com/user-attachments/assets/41a43d72-697f-48f7-86bd-c0abc7c63869)
-
 ### No Animation (Animation ID: `0`)
 This animation is more straightforward, where players simply click to claim a lootbox without any special effects.
 
@@ -145,7 +143,7 @@ The plugin does not have explicit permission checks for lootbox access at the mo
 ### Animation Previews
 
 **Shuffle Animation (ID: 1)**  
-[Watch Shuffle Animation Preview](https://github.com/user-attachments/assets/41a43d72-697f-48f7-86bd-c0abc7c63869)
+https://github.com/user-attachments/assets/4342b118-708d-46ba-a0fb-7c203dfbaae3
 
 **No Animation (ID: 0)**  
 This animation simply displays the lootbox with no shuffle effects. Players can click to claim their lootboxes directly without any visual effects.
